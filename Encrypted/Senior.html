@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Senior</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+        <link rel="stylesheet" href="design.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            function SignOut(){
+                document.cookie = "Username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                window.location.href = "loginSenior.html";
+            }
+        </script>
+        <script src="getIdSenior.js"></script>
+
+    </head>
+    
+    <body>
+        <div class="page">
+            
+                <img class="imgs" src="img/LOGO_CPE.png" style="width:100%;max-width: 800px;">
+            <div class="form">                
+                <form name="form1" id="form1" class="text-form">
+                    <p id="WelcomeText" class="texts"></p>
+                    <p id="Line1" class="texts"></p>
+                    <p id="Line2" class="texts"></p>
+                    <p id="Line3" class="texts"></p>
+                    <p id="imgCode" class="images"></p>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                </form>
+                <form name="form3" id="form3" class="text-form" hidden="true">
+                    <p id="Line4" class="texts"></p>
+                </form>
+                <form name="form2" id="form2" class="text-form" hidden="true">
+                        <button type="button" onclick="return SignOut()" id="Back" name="Back">ออกจากระบบ</button>
+                </form>
+            </div>
+        </div>
+
+        
+        <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+            apiKey: "AIzaSyAocFGe2oE6Ez-BZ0W5lI1dSX256Ze57WM",
+            authDomain: "cpenu61-68036.firebaseapp.com",
+            databaseURL: "https://cpenu61-68036.firebaseio.com",
+            projectId: "cpenu61-68036",
+            storageBucket: "cpenu61-68036.appspot.com",
+            messagingSenderId: "20580354939"
+            };
+            firebase.initializeApp(config);
+
+            $(document).keydown(function(e){
+                if(e.which == 123){
+            
+                    return false;
+            
+                }
+
+                if(e.ctrlKey){
+                    return false;
+                }
+            
+            });
+
+            $(document).bind("contextmenu",function(e) { 
+                e.preventDefault();
+            
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>test</title>
+            
+    </head>
+    <body><script type="text/javascript">
+                function img(code){
+                    var img = document.createElement("img");
+                    img.src="img/"+code+".png";
+                    img.width = 320;
+                    img.height = 200;
+                    
+    
+                    
+                     document.getElementById('imgCode').appendChild(img);
+                   // document.body.appendChild(img);
+                    
+                }
+                
+            </script>
+            
+        <button onclick="img('test');">test</button>
+        <p id="imgCode"></p>
+        <img src="img/test.png" width="200" height="150">
+        
+        
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+        <link rel="stylesheet" href="design.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="checkid.js"></script>
+
+    </head>
+    
+    <body>
+        <div class="page">
+            <img class="imgs" src="img/LOGO_CPE.png" style="width:100%;max-width: 800px;">
+            <div class="form">                
+                <form name="form1" id="form1" onsubmit="return checkID()" class="text-form">
+                    <p class="texts">Welcome Senior</p>
+                    <input id="User" name="User" type="text" placeholder="รหัสนิสิต"/>
+                    <input id="Pass" name="Pass"  type="password" placeholder="รหัสผ่าน"/>
+                    <button  id="Go" name="Go" type="submit">ล็อกอิน</button><br>
+                    
+                </form>
+                <form name="form2" id="form2" class="text-form">
+                    
+                    <button id="Back" name="Back" type="button" onclick="location.href='/index';">กลับ</button>
+                </form>
+            </div>
+        </div>
+
+
+        <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+            apiKey: "AIzaSyAocFGe2oE6Ez-BZ0W5lI1dSX256Ze57WM",
+            authDomain: "cpenu61-68036.firebaseapp.com",
+            databaseURL: "https://cpenu61-68036.firebaseio.com",
+            projectId: "cpenu61-68036",
+            storageBucket: "cpenu61-68036.appspot.com",
+            messagingSenderId: "20580354939"
+            };
+            firebase.initializeApp(config);
+
+            $(document).keydown(function(e){
+                if(e.which == 123){
+            
+                    return false;
+            
+                }
+
+                if(e.ctrlKey){
+                    return false;
+                }
+            
+            });
+
+            $(document).bind("contextmenu",function(e) { 
+                e.preventDefault();
+            
+            });
+        </script>
+    </body>
+</html>
